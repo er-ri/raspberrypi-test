@@ -6,7 +6,7 @@ import picamera
  
 # create socket and bind host
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('192.168.31.7', 8000))#replace with the server ip address ,port=8000
+client_socket.connect(('192.168.100.10', 8000))#replace with the server ip address ,port=8000
 connection = client_socket.makefile('wb')
  
 try:
