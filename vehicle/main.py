@@ -1,18 +1,15 @@
-from spike import ColorSensor, Motor
-from spike.control import wait_for_seconds
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Color
+from pybricks.tools import wait
 
-leg_motor=Motor('F')
-arm_motor=Motor('D')
-color_sensor=ColorSensor('B')
-leg_motor.set_default_speed(-40)
-arm_motor.set_default_speed(-60)
-# Set the legs to the starting position.
-leg_motor.run_to_position(0)
-arm_motor.run_to_position(0)
-wait_for_seconds(1)
-# Repeat arm and leg movement 10 times.
-for x in range(10):
-    leg_motor.start()
-    arm_motor.run_for_rotations(1)
-    leg_motor.stop()
-    wait_for_seconds(1)
+# Initialize the hub.
+hub = PrimeHub()
+
+# Turn the light on and off 5 times.
+for i in range(5):
+
+    hub.light.on(Color.RED)
+    wait(1000)
+
+    hub.light.off()
+    wait(500)
