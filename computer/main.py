@@ -127,6 +127,7 @@ class VideoStreaming(object):
         return line_image
 
 if __name__ == '__main__':
+    print('Start listening on PORT 8000')
     # host, port
     h, p = "", 8000
     VideoStreaming(h, p)
