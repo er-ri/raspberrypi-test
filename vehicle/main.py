@@ -5,6 +5,8 @@ from pybricks.tools import wait
 # Initialize the hub.
 hub = PrimeHub()
 
+print("Start!")
+
 # Turn the light on and off 5 times.
 for i in range(5):
 
