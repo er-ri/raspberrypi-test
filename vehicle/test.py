@@ -5,5 +5,6 @@ hub = PrimeHub()
 
 print(hub)
 
-hub.display.char('A')
-hub.light.off()
+hub.display.char('a')
+# hub.light.off()
+hub.light.on()
