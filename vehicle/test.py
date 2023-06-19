@@ -1,15 +1,16 @@
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Color
 from pybricks.hubs import EV3Brick
+import hub
 
 # Initialize the hub.
-hub = EV3Brick()
+# hub = PrimeHub()
 
-print(hub)
+# print(hub)
 
 # hub.display.char('a')
 # hub.light.off()
-hub.light.on(Color.RED)
+# hub.light.on(Color.RED)
 
 # Raspberry Pi4 
 serial = hub.port.C
