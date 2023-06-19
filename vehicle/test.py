@@ -1,8 +1,9 @@
 from pybricks.hubs import PrimeHub
 from pybricks.parameters import Color
+from pybricks.hubs import EV3Brick
 
 # Initialize the hub.
-hub = PrimeHub()
+hub = EV3Brick()
 
 print(hub)
 
