@@ -7,6 +7,6 @@ hub = EV3Brick()
 
 print(hub)
 
-hub.display.char('a')
+# hub.display.char('a')
 # hub.light.off()
 hub.light.on(Color.RED)
