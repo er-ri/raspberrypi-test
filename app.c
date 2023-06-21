@@ -17,6 +17,7 @@ void main_task(intptr_t unused) {
     
     printf("Hello World!\n");
     
+    char command;
     scanf("%c", &command);
     switch (command) {
         case 'f':
