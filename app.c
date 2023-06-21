@@ -34,6 +34,7 @@ void main_task(intptr_t unused) {
             break;
         default:
             printf("Invalid command.\n");
+            printf("Value of c = %c\n",command);
             break;
     }
 
