@@ -17,8 +17,8 @@ void main_task(intptr_t unused) {
     
     printf("Hello World!\n");
     
-    ev3_motor_set_power(left_motor, 30);
-    ev3_motor_set_power(right_motor, 30);
+    ev3_motor_set_power(left_motor, 300);
+    // ev3_motor_set_power(right_motor, 30);
     /* ライントレースタスクの起動 */
     // sta_cyc(LINE_TRACER_TASK_CYC);
 
