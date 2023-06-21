@@ -18,12 +18,12 @@ void main_task(intptr_t unused) {
     
     printf("Hello World!\n");
     
-    ev3_motor_set_power(left_motor, 20);
+    ev3_motor_set_power(left_motor, 310);
     // ev3_motor_set_power(right_motor, 30);
     /* ライントレースタスクの起動 */
     // sta_cyc(LINE_TRACER_TASK_CYC);
     sleep(5);
-    
+
     ev3_motor_set_power(left_motor, 0);
     /* タスク終了 */
     ext_tsk();
