@@ -8,12 +8,6 @@
 SDKDIR = ..
 WSPDIR = $(basename $(PWD))
 ASPMAKEFILE = Makefile.asp
-include ../common/Makefile.workspace
-
-ifeq ($(APPLDIR),)
-APPLDIR = $(shell cat appdir)
-include $(APPLDIR)/Makefile.inc
-endif
 
 start: appdir
 	$(ADDITIONAL_PRE_APPL)
