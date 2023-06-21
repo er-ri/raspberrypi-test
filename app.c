@@ -1,6 +1,5 @@
 #include "app.h"
 #include <stdio.h>
-#include <unistd.h>
 
 /* メインタスク(起動時にのみ関数コールされる) */
 void main_task(intptr_t unused) {
@@ -18,13 +17,30 @@ void main_task(intptr_t unused) {
     
     printf("Hello World!\n");
     
-    ev3_motor_set_power(left_motor, 310);
+    scanf("%c", &command);
+    switch (command) {
+        case 'f':
+            ev3_motor_set_power(left_motor, 30);
+            break;
+        case 'b':
+            ev3_motor_set_power(left_motor, 0);
+            break;
+        case 'l':
+            printf("Turning left.\n");
+            break;
+        case 'r':
+            printf("Turning right.\n");
+            break;
+        default:
+            printf("Invalid command.\n");
+            break;
+    }
+
+    // ev3_motor_set_power(left_motor, 30);
     // ev3_motor_set_power(right_motor, 30);
     /* ライントレースタスクの起動 */
     // sta_cyc(LINE_TRACER_TASK_CYC);
-    sleep(5);
 
-    ev3_motor_set_power(left_motor, 0);
     /* タスク終了 */
     ext_tsk();
 }
