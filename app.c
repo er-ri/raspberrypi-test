@@ -15,10 +15,10 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor    ,MEDIUM_MOTOR);
     ev3_motor_config(right_motor   ,MEDIUM_MOTOR);
     
-    printf("Start Line Trace!!\n");
+    printf("Hello World!\n");
     
     /* ライントレースタスクの起動 */
-    sta_cyc(LINE_TRACER_TASK_CYC);
+    // sta_cyc(LINE_TRACER_TASK_CYC);
 
     /* タスク終了 */
     ext_tsk();
