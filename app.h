@@ -29,10 +29,7 @@ static const motor_port_t
 #endif /* STACK_SIZE */
 
 #ifndef TOPPERS_MACRO_ONLY
-
 extern void main_task(intptr_t exinf);
-extern void tracer_task(intptr_t exinf);
-
 #endif /* TOPPERS_MACRO_ONLY */
 
 #ifdef __cplusplus
