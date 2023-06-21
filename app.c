@@ -15,7 +15,7 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor    ,MEDIUM_MOTOR);
     ev3_motor_config(right_motor   ,MEDIUM_MOTOR);
     
-    printf("Hello World!\n");
+    printf("Hello World!");
     
     char command;
     scanf("%c", &command);
