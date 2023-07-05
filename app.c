@@ -14,10 +14,12 @@ void main_task(intptr_t unused) {
     ev3_motor_config(arm_motor     ,LARGE_MOTOR);
     ev3_motor_config(left_motor    ,MEDIUM_MOTOR);
     ev3_motor_config(right_motor   ,MEDIUM_MOTOR);
+
+    cjkjkjnksdfjakldsfkkfewjiewgouwejirnvkajfskd
     
+    har command;    
     printf("Hello World! ");
-    
-    char command;
+
     scanf("%c", &command);
     switch (command) {
         case 'f':
