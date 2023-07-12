@@ -56,7 +56,7 @@ def stop():
     global serialPort
     # requestData = request.form["speed"]
     # print("Sending command to SPIKE: {}".format(requestData))
-    requestData = "flaskfjasldkjf"
+    requestData = "40"
     if serialPort:
         serialPort.write(requestData.encode())
     return "Success!"
