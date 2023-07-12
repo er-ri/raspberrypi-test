@@ -9,6 +9,7 @@ import hub,utime
 # Raspberry Pi4 
 serial = hub.port.D
 serial.mode(hub.port.MODE_FULL_DUPLEX)
+utime.sleep(1000)
 serial.baud(115200)
 
 # Motors
