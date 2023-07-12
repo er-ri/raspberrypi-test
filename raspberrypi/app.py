@@ -48,7 +48,7 @@ def cmd():
     # print("Sending command to SPIKE: {}".format(requestData))
     requestData = 30
     if serialPort:
-        serialPort.write(requestData.encode())
+        serialPort.write(requestData)
     return "Success!"
  
 @app.route("/stop", methods=["POST"])
@@ -58,7 +58,7 @@ def stop():
     # print("Sending command to SPIKE: {}".format(requestData))
     requestData = 0
     if serialPort:
-        serialPort.write(requestData.encode())
+        serialPort.write(requestData)
     return "Success!"
 
 if __name__ == "__main__":

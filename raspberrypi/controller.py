@@ -22,7 +22,7 @@ right.pwm(0)
 while True : 
     # Read communcition from Raspberry Pi and Decode
     data = serial.read(1000)
-    data = data.decode("UTF-8")
+    # data = data.decode("UTF-8")
     # parameters = json.loads(data)
     
     # speed = parameters["speed"]
