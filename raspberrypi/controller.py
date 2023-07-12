@@ -24,7 +24,7 @@ while True :
     data = serial.read(1000)
     # data = data.decode("UTF-8")
     # parameters = json.loads(data)
-    
+    print(data)
     # speed = parameters["speed"]
     left.pwm(data)
     right.pwm(data)
