@@ -13,8 +13,8 @@ utime.sleep(1)
 serial.baud(115200)
 
 # Motors
-left = hub.port.C.motor
-right = hub.port.D.motor
+left = hub.port.B.motor
+right = hub.port.C.motor
 
 left.pwm(0)
 right.pwm(0)
