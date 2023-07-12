@@ -52,7 +52,7 @@ def cmd():
     return "Success!"
  
 @app.route("/stop", methods=["POST"])
-def cmd():
+def stop():
     global serialPort
     # requestData = request.form["speed"]
     # print("Sending command to SPIKE: {}".format(requestData))
