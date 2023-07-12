@@ -51,7 +51,7 @@ def cmd():
         serialPort.write(requestData.encode())
     return "Success!"
  
-@app.route("/cmd1", methods=["POST"])
+@app.route("/stop", methods=["POST"])
 def cmd():
     global serialPort
     # requestData = request.form["speed"]
