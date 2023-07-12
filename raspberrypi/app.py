@@ -58,7 +58,7 @@ def stop():
     # print("Sending command to SPIKE: {}".format(requestData))
     requestData = "flaskfjasldkjf"
     if serialPort:
-        serialPort.write(requestData)
+        serialPort.write(requestData.encode())
     return "Success!"
 
 if __name__ == "__main__":
