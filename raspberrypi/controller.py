@@ -25,8 +25,10 @@ while True :
     # data = data.decode("UTF-8")
     # parameters = json.loads(data)
     print(data)
+    if data == "":
+        data = 0
     # speed = parameters["speed"]
-    left.pwm(data.decode("UTF-8"))
-    right.pwm(data.decode("UTF-8"))
+    left.pwm(data)
+    right.pwm(data)
 
     utime.sleep_ms(100)
