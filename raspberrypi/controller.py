@@ -26,7 +26,7 @@ while True :
     # parameters = json.loads(data)
     print(data)
     # speed = parameters["speed"]
-    left.pwm(data.decode("UTF-8"))
-    right.pwm(data.decode("UTF-8"))
+    left.pwm(data)
+    right.pwm(data)
 
     utime.sleep_ms(100)
