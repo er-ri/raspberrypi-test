@@ -14,7 +14,7 @@ serial.baud(115200)
 
 # Motors
 left = hub.port.B.motor
-right = hub.port.C.motor
+right = hub.port.E.motor
 
 left.pwm(0)
 right.pwm(0)
@@ -26,7 +26,7 @@ while True :
     # parameters = json.loads(data)
     print(data)
     # speed = parameters["speed"]
-    left.pwm(data)
-    right.pwm(data)
+    left.pwm(data.decode("UTF-8"))
+    right.pwm(data.decode("UTF-8"))
 
     utime.sleep_ms(100)
