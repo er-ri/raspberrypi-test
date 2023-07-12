@@ -20,18 +20,22 @@ left.pwm(0)
 right.pwm(0)
 
 while True : 
-    # Read communcition from Raspberry Pi and Decode
-    data = serial.read(1000)
-    # data = data.decode("UTF-8")
-    # parameters = json.loads(data)
-    print(len(data))
-    if len(data) == 0:
-        data = 0
+    try : 
+        # Read communcition from Raspberry Pi and Decode
+        line = serial.read(1000)
+        line = str(line.decode("UTF-8"))
+        
+        if (line.startswith('d')) :
+            # We are reading from the GUI Wheel
+            left.pwm(40)
+            right.pwm(40)  
+            utime.sleep_ms(3000)   
 
-    print(data.decode("UTF-8"))
-    print(type(data.decode("UTF-8")))
-    # speed = parameters["speed"]
-    left.pwm(int(data.decode("UTF-8")))
-    right.pwm(int(data.decode("UTF-8")))
+        elif (line.startswith('p')) :
+            left.pwm(0)
+            right.pwm(0)
+      
+    except: 
+        pass
 
     utime.sleep_ms(100)
