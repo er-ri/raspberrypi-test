@@ -27,8 +27,11 @@ while True :
     print(len(data))
     if len(data) == 0:
         data = 0
+
+    print(data.decode("UTF-8"))
+    print(type(data.decode("UTF-8")))
     # speed = parameters["speed"]
-    left.pwm(data)
-    right.pwm(data)
+    left.pwm(data.decode("UTF-8"))
+    right.pwm(data.decode("UTF-8"))
 
     utime.sleep_ms(100)
