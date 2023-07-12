@@ -24,12 +24,13 @@ while True :
         # Read communcition from Raspberry Pi and Decode
         line = serial.read(1000)
         line = str(line.decode("UTF-8"))
+        print(line)
         
         if (line.startswith('d')) :
             # We are reading from the GUI Wheel
             left.pwm(40)
             right.pwm(40)  
-            utime.sleep_ms(3000)   
+            # utime.sleep_ms(3000)   
 
         elif (line.startswith('p')) :
             left.pwm(0)
