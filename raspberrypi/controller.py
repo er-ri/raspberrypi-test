@@ -23,10 +23,10 @@ while True :
     # Read communcition from Raspberry Pi and Decode
     data = serial.read(1000)
     data = data.decode("UTF-8")
-    parameters = json.loads(data)
+    # parameters = json.loads(data)
     
-    speed = parameters["speed"]
-    left.pwm(speed)
-    right.pwm(speed)
+    # speed = parameters["speed"]
+    left.pwm(data)
+    right.pwm(data)
 
     utime.sleep_ms(100)

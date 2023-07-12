@@ -44,7 +44,7 @@ def video_feed():
 @app.route("/cmd", methods=["POST"])
 def cmd():
     global serialPort
-    requestData = request.form["type"]
+    requestData = request.form["speed"]
     print("Sending command to SPIKE: {}".format(requestData))
     if serialPort:
         serialPort.write(requestData.encode())
