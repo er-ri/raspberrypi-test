@@ -9,7 +9,7 @@ import hub,utime
 # Raspberry Pi4 
 serial = hub.port.D
 serial.mode(hub.port.MODE_FULL_DUPLEX)
-utime.sleep(1)
+utime.sleep_ms(2000)
 serial.baud(115200)
 
 # Motors
@@ -19,24 +19,25 @@ right = hub.port.E.motor
 left.pwm(0)
 right.pwm(0)
 
+print("SPIKE Prime Started!")
+
 while True : 
     try : 
         # Read communcition from Raspberry Pi and Decode
-        line = serial.read(1000)
-        line = str(line.decode("UTF-8"))
-        print(line)
+        raw = serial.read(1000)
+        # print(len(raw))
         
-        if (line.startswith('d')) :
-            # We are reading from the GUI Wheel
-            left.pwm(40)
-            right.pwm(40)  
-            # utime.sleep_ms(3000)   
-
-        elif (line.startswith('p')) :
-            left.pwm(0)
-            right.pwm(0)
+        speed = 0
+        if len(raw) != 0:
+            raw = str(raw.decode("UTF-8"))
+            parameters = json.loads(raw)
+            speed = parameters["speed"]
+            angle = parameters["angle"]
+            
+        left.pwm(speed * angle)
+        right.pwm(-(speed * (1-angle)))
       
     except: 
         pass
 
-    utime.sleep_ms(100)
+    utime.sleep_ms(200)

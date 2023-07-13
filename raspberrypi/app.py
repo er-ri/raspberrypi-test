@@ -3,7 +3,7 @@ The module runs on native Raspberry PI environment.
 Using the following command to launch the flask server:
     flask run --host=0.0.0.0
 """
-
+import json
 import cv2 
 import serial 
 from flask import Flask, Response, render_template, request 
@@ -44,22 +44,9 @@ def video_feed():
 @app.route("/cmd", methods=["POST"])
 def cmd():
     global serialPort
-    # requestData = request.form["speed"]
-    # print("Sending command to SPIKE: {}".format(requestData))
-    requestData = 30
     if serialPort:
-        serialPort.write("dddddd".encode())
+        serialPort.write(request.json.encode())
     return "Success!"
  
-@app.route("/stop", methods=["POST"])
-def stop():
-    global serialPort
-    # requestData = request.form["speed"]
-    # print("Sending command to SPIKE: {}".format(requestData))
-    requestData = 0
-    if serialPort:
-        serialPort.write("ppppppp".encode())
-    return "Success!"
-
 if __name__ == "__main__":
     app.run(debug=True)
