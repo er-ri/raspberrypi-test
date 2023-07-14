@@ -23,3 +23,6 @@ https://docs.micropython.org/en/latest/reference/pyboard.py.html#running-a-comma
 https://raspberrypi-guide.github.io/programming/install-opencv
 
 sudo raspi-config
+
+
+# WebSocket
